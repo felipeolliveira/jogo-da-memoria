@@ -1,5 +1,5 @@
 function createCardElement(qtd, classModifier, nameIcon) {
-  const $root = document.querySelector("#root");
+  const $wrapCards = document.querySelector(".wrap-cards");
 
   const $memoryCard = document.createElement("article");
   if (classModifier) $memoryCard.classList.add("memory-card", classModifier);
@@ -13,7 +13,7 @@ function createCardElement(qtd, classModifier, nameIcon) {
   $memoryCard.insertAdjacentHTML("beforeend", $icon);
 
   for (let i = 0; i < (qtd || 1); i++) {
-    $root.insertAdjacentHTML("beforeend", $memoryCard.outerHTML);
+    $wrapCards.insertAdjacentHTML("beforeend", $memoryCard.outerHTML);
   }
 }
 
