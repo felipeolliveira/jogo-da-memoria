@@ -2,14 +2,12 @@
   width: 155px;
   height: 155px;
   background-color: #f25a70;
-  position: relative;
   border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .memory-card > .icon {
   width: 100px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
