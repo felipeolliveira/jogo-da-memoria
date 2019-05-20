@@ -21,7 +21,7 @@
   background-color: #fff;
 }
 
-.memory-card.-back::after {
+.memory-card.-back::before {
   content: "";
   position: absolute;
   top: 50%;
