@@ -1,4 +1,4 @@
-function createCardElement(number, classModifier, nameIcon) {
+function createCardElement(qtd, classModifier, nameIcon) {
   const $root = document.querySelector("#root");
 
   const $memoryCard = document.createElement("article");
@@ -7,14 +7,22 @@ function createCardElement(number, classModifier, nameIcon) {
 
   const $icon = `<img
     class = "icon"
-    src="../img/${nameIcon || "icon-collabcode.svg"} "}
-    alt = ${nameIcon || "icon-collabcode.svg"}
+    src="../img/${nameIcon}"}
+    alt = ${nameIcon}
   />`;
   $memoryCard.insertAdjacentHTML("beforeend", $icon);
 
-  for (let i = 0; i < (number || 1); i++) {
+  for (let i = 0; i < (qtd || 1); i++) {
     $root.insertAdjacentHTML("beforeend", $memoryCard.outerHTML);
   }
 }
 
-export default createCardElement;
+function createFrontCard(qtd) {
+  createCardElement(qtd, "", "icon-collabcode.svg");
+}
+
+function createBackCard(qtd, nameIcon) {
+  createCardElement(qtd, "-back", nameIcon);
+}
+
+export { createFrontCard, createBackCard };

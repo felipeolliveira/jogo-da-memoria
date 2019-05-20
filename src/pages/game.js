@@ -1,4 +1,7 @@
-import createCardElement from "../components/memory-card/memory-card.js";
+import {
+  createBackCard,
+  createFrontCard
+} from "../components/memory-card/memory-card.js";
 
-createCardElement(1, "-back", "icon-js.png");
-createCardElement(5);
+createBackCard(3, "icon-js.png");
+createFrontCard(5);
