@@ -1,14 +1,35 @@
 .memory-card {
   width: 155px;
   height: 155px;
+  position: relative;
   background-color: #f25a70;
   border-radius: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  float: left;
+  margin: 10px;
 }
 
 .memory-card > .icon {
   width: 100px;
+  z-index: 2;
+}
+
+.memory-card.-back {
+  background-color: #fff;
+}
+
+.memory-card.-back::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 94px;
+  height: 94px;
+  background-color: #d4d4d4;
+  border-radius: 100%;
+  transform: translate(-50%, calc(-50% + 10px));
+  z-index: 1;
 }
