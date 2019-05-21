@@ -7,7 +7,7 @@ function createCardElement(qtd, classModifier, nameIcon) {
 
   const $icon = `<img
     class = "icon"
-    src="../img/${nameIcon}"}
+    src="img/${nameIcon}"}
     alt = ${nameIcon}
   />`;
   $memoryCard.insertAdjacentHTML("beforeend", $icon);
