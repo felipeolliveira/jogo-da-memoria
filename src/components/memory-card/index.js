@@ -6,15 +6,22 @@ function createCardElement(qtd, classModifier, nameIcon) {
   else $memoryCard.classList.add("memory-card");
 
   const $icon = `<img
-    class = "icon"
-    src="img/${nameIcon}"}
-    alt = ${nameIcon}
+  class = "icon"
+  src="img/${nameIcon}"}
+  alt = ${nameIcon}
   />`;
   $memoryCard.insertAdjacentHTML("beforeend", $icon);
 
   for (let i = 0; i < (qtd || 1); i++) {
     $wrapCards.insertAdjacentHTML("beforeend", $memoryCard.outerHTML);
   }
+}
+
+function memoryCardAddEvents() {
+  const $memoryCardsElements = document.querySelectorAll(".memory-card");
+  $memoryCardsElements.forEach(element => {
+    element.addEventListener("click", () => console.log(element));
+  });
 }
 
 function createFrontCard(qtd) {
@@ -25,4 +32,4 @@ function createBackCard(qtd, nameIcon) {
   createCardElement(qtd, "-back", nameIcon);
 }
 
-export { createFrontCard, createBackCard };
+export { createFrontCard, createBackCard, memoryCardAddEvents };
