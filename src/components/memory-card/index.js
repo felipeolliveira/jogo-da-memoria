@@ -1,5 +1,4 @@
-function createFrontCard() {
-  const $memoryC = `
+const createFrontCard = () => `
   <article class="memory-card">
     <img
       class="icon"
@@ -8,13 +7,9 @@ function createFrontCard() {
       OnClick="handleClick()"
     />
   </article>
-  `;
+`;
 
-  return $memoryC;
-}
-
-function createBackCard(icon) {
-  const $memoryC = `
+const createBackCard = icon => `
   <article class="memory-card -back">
     <img
       class="icon"
@@ -23,8 +18,6 @@ function createBackCard(icon) {
       OnClick="handleClick()"
     />
   </article>
-  `;
-  return $memoryC;
-}
+`;
 
 export { createFrontCard, createBackCard };
