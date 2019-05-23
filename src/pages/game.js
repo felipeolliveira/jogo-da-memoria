@@ -1,11 +1,22 @@
-import createWrapCards from "../Object/wrap-cards/index.js";
+import createcardsWrapper from "../Object/cards-wrappers/index.js";
 import {
   createBackCard,
-  createFrontCard,
-  memoryCardAddEvents
+  createFrontCard
 } from "../components/memory-card/index.js";
 
-createWrapCards();
-createBackCard(3, "icon-js.png");
-createFrontCard(5);
-memoryCardAddEvents();
+const $root = document.querySelector("#root");
+
+const $cardsWrapper = createcardsWrapper();
+const $memoryCardBack = createBackCard("icon-js.png");
+const $memoryCardFront = createFrontCard();
+
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBack);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBack);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBack);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBack);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBack);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBack);
+
+$root.insertAdjacentElement("beforeend", $cardsWrapper);

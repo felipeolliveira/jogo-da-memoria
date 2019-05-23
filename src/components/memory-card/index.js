@@ -1,35 +1,30 @@
-function createCardElement(qtd, classModifier, nameIcon) {
-  const $wrapCards = document.querySelector(".wrap-cards");
+function createFrontCard() {
+  const $memoryC = `
+  <article class="memory-card">
+    <img
+      class="icon"
+      src="img/icon-collabcode.svg"
+      alt="icone da collabcode - Gueio"
+      OnClick="handleClick()"
+    />
+  </article>
+  `;
 
-  const $memoryCard = document.createElement("article");
-  if (classModifier) $memoryCard.classList.add("memory-card", classModifier);
-  else $memoryCard.classList.add("memory-card");
-
-  const $icon = `<img
-  class = "icon"
-  src="img/${nameIcon}"
-  alt = ${nameIcon}
-  />`;
-  $memoryCard.insertAdjacentHTML("beforeend", $icon);
-
-  for (let i = 0; i < (qtd || 1); i++) {
-    $wrapCards.insertAdjacentHTML("beforeend", $memoryCard.outerHTML);
-  }
+  return $memoryC;
 }
 
-function memoryCardAddEvents() {
-  const $memoryCardsElements = document.querySelectorAll(".memory-card");
-  $memoryCardsElements.forEach(element => {
-    element.addEventListener("click", () => console.log(element));
-  });
+function createBackCard(icon) {
+  const $memoryC = `
+  <article class="memory-card -back">
+    <img
+      class="icon"
+      src="img/${icon}"
+      alt= ${icon}
+      OnClick="handleClick()"
+    />
+  </article>
+  `;
+  return $memoryC;
 }
 
-function createFrontCard(qtd) {
-  createCardElement(qtd, "", "icon-collabcode.svg");
-}
-
-function createBackCard(qtd, nameIcon) {
-  createCardElement(qtd, "-back", nameIcon);
-}
-
-export { createFrontCard, createBackCard, memoryCardAddEvents };
+export { createFrontCard, createBackCard };
