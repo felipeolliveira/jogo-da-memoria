@@ -1,16 +1,5 @@
-const createFrontCard = () => `
-  <article class="memory-card">
-    <img
-      class="icon"
-      src="img/icon-collabcode.svg"
-      alt="icone da collabcode - Gueio"
-      OnClick="handleClick()"
-    />
-  </article>
-`;
-
-const createBackCard = icon => `
-  <article class="memory-card -back">
+const createCard = (classModifier, icon) => `
+  <article class="memory-card ${classModifier}">
     <img
       class="icon"
       src="img/${icon}"
@@ -20,4 +9,4 @@ const createBackCard = icon => `
   </article>
 `;
 
-export { createFrontCard, createBackCard };
+export { createCard };

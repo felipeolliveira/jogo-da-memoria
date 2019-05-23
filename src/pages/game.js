@@ -1,14 +1,11 @@
 import createcardsWrapper from "../Object/cards-wrappers/index.js";
-import {
-  createBackCard,
-  createFrontCard
-} from "../components/memory-card/index.js";
+import { createCard } from "../components/memory-card/index.js";
 
 const $root = document.querySelector("#root");
 
 const $cardsWrapper = createcardsWrapper();
-const $memoryCardBack = createBackCard("icon-js.png");
-const $memoryCardFront = createFrontCard();
+const $memoryCardBack = createCard("-back", "icon-js.png");
+const $memoryCardFront = createCard("", "icon-collabcode.svg");
 
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
