@@ -4,8 +4,16 @@ import { createCard } from "../components/memory-card/index.js";
 const $root = document.querySelector("#root");
 
 const $cardsWrapper = createcardsWrapper();
-const $memoryCardBack = createCard("-back", "icon-js.png");
-const $memoryCardFront = createCard("", "icon-collabcode.svg");
+const $memoryCardBack = createCard(
+  "img/icon-js.png",
+  "Icone de Javascript",
+  "-back"
+);
+const $memoryCardFront = createCard(
+  "img/icon-collabcode.svg",
+  "Icone do Gueio, mascote da collabcode",
+  ""
+);
 
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);

@@ -1,9 +1,9 @@
-const createCard = (classModifier, icon) => `
+const createCard = (src, alt, classModifier) => `
   <article class="memory-card ${classModifier}">
     <img
       class="icon"
-      src="img/${icon}"
-      alt= ${icon}
+      src= ${src}
+      alt= ${alt}
       OnClick="handleClick()"
     />
   </article>
