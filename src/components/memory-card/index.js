@@ -1,5 +1,5 @@
-const createCard = (src, alt, classModifier) => `
-  <article class="memory-card ${classModifier}">
+const createCard = (src, alt, ...classNames) => `
+  <article class="memory-card ${classNames}">
     <img
       class="icon"
       src= ${src}

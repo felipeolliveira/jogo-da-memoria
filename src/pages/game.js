@@ -6,8 +6,7 @@ const $root = document.querySelector("#root");
 const $cardsWrapper = createcardsWrapper();
 const $GueioCard = createCard(
   "img/icon-collabcode.svg",
-  "Icone do Gueio, mascote da collabcode",
-  ""
+  "Icone do Gueio, mascote da collabcode"
 );
 const $JavaScriptCard = createCard(
   "img/icon-js.png",
