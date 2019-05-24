@@ -4,16 +4,16 @@ import { createCard } from "../components/memory-card/index.js";
 const $root = document.querySelector("#root");
 
 const $cardsWrapper = createcardsWrapper();
-const $GueioCard = createCard(
+const $gueioCard = createCard(
   "img/icon-collabcode.svg",
   "Icone do Gueio, mascote da collabcode"
 );
-const $JavaScriptCard = createCard(
+const $javascriptCard = createCard(
   "img/icon-js.png",
   "Icone da linguagem Javascript",
   "-back"
 );
-const $CppCard = createCard(
+const $cppCard = createCard(
   "img/icon-c.png",
   "Icone da linguagem C++",
   "-back"
@@ -24,12 +24,12 @@ const $bugCard = createCard(
   "-back"
 );
 
-$cardsWrapper.insertAdjacentHTML("beforeend", $GueioCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $GueioCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $JavaScriptCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $JavaScriptCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $CppCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $CppCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $gueioCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $gueioCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $cppCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $cppCard);
 $cardsWrapper.insertAdjacentHTML("beforeend", $bugCard);
 $cardsWrapper.insertAdjacentHTML("beforeend", $bugCard);
 
