@@ -2,7 +2,7 @@
 @import url("./generic/reset.css");
 
 /* Objects */
-@import url("./Object/wrap-cards.css");
+@import url("../src/Object/cards-wrappers/styles.css");
 
 /* Components */
-@import url("./component/memory-card.css");
+@import url("../src/components/memory-card/styles.css");
