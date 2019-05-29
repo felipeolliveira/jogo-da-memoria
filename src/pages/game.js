@@ -1,5 +1,5 @@
 import createcardsWrapper from "../Object/cards-wrappers/index.js";
-import { createCard } from "../components/memory-card/index.js";
+import createCard from "../components/memory-card/index.js";
 
 const $root = document.querySelector("#root");
 
