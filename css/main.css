@@ -1,8 +1,0 @@
-/* Generic */
-@import url("./generic/reset.css");
-
-/* Objects */
-@import url("./Object/wrap-cards.css");
-
-/* Components */
-@import url("./component/memory-card.css");

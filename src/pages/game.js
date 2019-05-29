@@ -1,28 +1,28 @@
 import createcardsWrapper from "../Object/cards-wrappers/index.js";
-import { createCard } from "../components/memory-card/index.js";
+import createCard from "../components/memory-card/index.js";
 
 const $root = document.querySelector("#root");
 
 const $cardsWrapper = createcardsWrapper();
-const $gueioCard = createCard(
-  "img/icon-collabcode.svg",
-  "Icone do Gueio, mascote da collabcode"
-);
-const $javascriptCard = createCard(
-  "img/icon-js.png",
-  "Icone da linguagem Javascript",
-  "-back"
-);
-const $cppCard = createCard(
-  "img/icon-c.png",
-  "Icone da linguagem C++",
-  "-back"
-);
-const $bugCard = createCard(
-  "img/icon-bug.png",
-  "Icone do Gueio, mascote da collabcode",
-  "-back"
-);
+const $gueioCard = createCard({
+  src: "img/icon-collabcode.svg",
+  alt: "Icone do Gueio, mascote da collabcode"
+});
+const $javascriptCard = createCard({
+  src: "img/icon-js.png",
+  alt: "Icone da linguagem Javascript",
+  className: "-back"
+});
+const $cppCard = createCard({
+  src: "img/icon-c.png",
+  alt: "Icone da linguagem C++",
+  className: "-back"
+});
+const $bugCard = createCard({
+  src: "img/icon-bug.png",
+  alt: "Icone do Gueio, mascote da collabcode",
+  className: "-back"
+});
 
 $cardsWrapper.insertAdjacentHTML("beforeend", $gueioCard);
 $cardsWrapper.insertAdjacentHTML("beforeend", $gueioCard);
