@@ -1,5 +1,4 @@
-const createCard = ({ className, src, alt }) => {
-  const $article = `
+const createCard = ({ className, src, alt }) => `
   <article class="memory-card ${className === undefined ? "" : className}">
     <img
       class="icon"
@@ -10,7 +9,8 @@ const createCard = ({ className, src, alt }) => {
   </article>
 `;
 
-  const styles = `
+const $style = document.createElement("style");
+const styles = `
     .memory-card {
       width: 155px;
       height: 155px;
@@ -45,12 +45,7 @@ const createCard = ({ className, src, alt }) => {
     }
   `;
 
-  const $style = document.querySelector("head > style");
-  if (!$style.innerHTML.includes(styles)) {
-    $style.textContent += styles;
-  }
-
-  return $article;
-};
+$style.textContent = styles;
+document.head.insertAdjacentElement("beforeend", $style);
 
 export default createCard;
