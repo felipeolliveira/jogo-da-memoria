@@ -1,13 +1,17 @@
 import createcardsWrapper from "../Object/cards-wrappers/index.js";
-import createCard from "../components/memory-card/index.js";
+import memoryCard from "../components/memory-card/index.js";
 
 const $root = document.querySelector("#root");
 
 const $cardsWrapper = createcardsWrapper();
+
+const createCard = memoryCard();
+
 const $gueioCard = createCard({
   src: "img/icon-collabcode.svg",
   alt: "Icone do Gueio, mascote da collabcode"
 });
+
 const $javascriptCard = createCard({
   src: "img/icon-js.png",
   alt: "Icone da linguagem Javascript",
