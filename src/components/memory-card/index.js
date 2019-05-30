@@ -34,13 +34,17 @@ function memoryCard() {
   $style.textContent = styles;
   document.head.insertAdjacentElement("beforeend", $style);
 
+  window.handleClick = () => {
+    console.log("foi");
+  };
+
   return ({ className, src, alt }) => `
     <article class="memory-card ${className === undefined ? "" : className}">
       <img
         class="icon"
         src= ${src}
         alt= ${alt}
-        OnClick="handleClick()"
+        OnClick="window.handleClick()"
       />
     </article>
   `;
