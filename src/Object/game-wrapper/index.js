@@ -1,10 +1,10 @@
-function createCardsWrapper() {
-  const $cardsWrapper = document.createElement("section");
-  $cardsWrapper.classList.add("cards-wrapper");
+export default function crateGameWrapper() {
+  const $gameWrapper = document.createElement("section");
+  $gameWrapper.classList.add("game-wrapper");
 
   const $style = document.createElement("style");
   $style.textContent = `
-    .cards-wrapper {
+    .game-wrapper {
       width: 375px;
       display: flex;
       flex-wrap: wrap;
@@ -18,7 +18,5 @@ function createCardsWrapper() {
 
   document.head.insertAdjacentElement("beforeend", $style);
 
-  return $cardsWrapper;
+  return $gameWrapper;
 }
-
-export default createCardsWrapper;

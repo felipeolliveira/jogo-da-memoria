@@ -1,40 +1,39 @@
-import createcardsWrapper from "../Object/cards-wrappers/index.js";
+import createGameWrapper from "../Object/game-wrapper/index.js";
 import memoryCard from "../components/memory-card/index.js";
 
 const $root = document.querySelector("#root");
-
-const $cardsWrapper = createcardsWrapper();
+const $gameWrapper = createGameWrapper();
 
 const createCard = memoryCard();
 
-const $gueioCard = createCard({
-  src: "img/icon-collabcode.svg",
-  alt: "Icone do Gueio, mascote da collabcode"
-});
-
 const $javascriptCard = createCard({
-  src: "img/icon-js.png",
-  alt: "Icone da linguagem Javascript",
-  className: "-back"
+  srcFront: "img/icon-collabcode.svg",
+  altFront: "Icone do Gueio, mascote da collabcode",
+  srcBack: "img/icon-js.png",
+  altBack: "Icone da linguagem Javascript"
 });
 const $cppCard = createCard({
-  src: "img/icon-c.png",
-  alt: "Icone da linguagem C++",
-  className: "-back"
+  srcFront: "img/icon-collabcode.svg",
+  altFront: "Icone do Gueio, mascote da collabcode",
+  srcBack: "img/icon-c.png",
+  altBack: "Icone da linguagem C++"
 });
 const $bugCard = createCard({
-  src: "img/icon-bug.png",
-  alt: "Icone do Gueio, mascote da collabcode",
-  className: "-back"
+  srcFront: "img/icon-collabcode.svg",
+  altFront: "Icone do Gueio, mascote da collabcode",
+  srcBack: "img/icon-bug.png",
+  altBack: "Icone do inseto - o bug usado em informática"
+});
+const $womanCard = createCard({
+  srcFront: "img/icon-collabcode.svg",
+  altFront: "Icone do Gueio, mascote da collabcode",
+  srcBack: "img/icon-woman.png",
+  altBack: "Icone de uma mulher usando um laptop"
 });
 
-$cardsWrapper.insertAdjacentHTML("beforeend", $gueioCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $gueioCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $cppCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $cppCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $bugCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $bugCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $cppCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $bugCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $womanCard);
 
-$root.insertAdjacentElement("beforeend", $cardsWrapper);
+$root.insertAdjacentElement("beforeend", $gameWrapper);
