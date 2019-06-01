@@ -12,22 +12,21 @@ export default function memoryCard() {
       align-items: center;
       box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
       margin-top: 10px;
-      transition: .2s;
+      position: relative;
     }
-    .memory-card > .icon {
-      width: 100px;
-      z-index: 2;
-      display:block;
-      transition: .2s;
+    .memory-card > .card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: inherit;
+      align-items: inherit;
     }
-    .memory-card > .icon.-back {
+    .memory-card > .card.-back {
       display: none;
-      transition: .2s;
+      background: #fff;
     }
-    .memory-card.-faceup {
-      background-color: #fff;
-    }
-    .memory-card.-faceup::before {
+    .memory-card > .card.-back::before {
       content: "";
       position: absolute;
       width: 94px;
@@ -37,45 +36,46 @@ export default function memoryCard() {
       transform: translateY(10px);
       z-index: 1;
     }
-    .memory-card.-faceup > .icon {
-      transition: .2s;
+    .memory-card .icon {
+      width: 100px;
+      height: 100px;
+      z-index: 2;
+    }
+    .memory-card.-faceup > .card {
       display: none;
     }
-    .memory-card.-faceup > .icon.-back {
+    .memory-card.-faceup > .card.-back {
+      display: flex;
+    }
+    .memory-card .card.-faceup > .icon.-back {
       display: inline;
-      transition: .2s;
     }
   `;
   $style.textContent = styles;
   document.head.insertAdjacentElement("beforeend", $style);
 
-  function handleClickToggleCard() {
-    const $target = event.target;
-
-    if ($target.localName === "article") {
-      $target.classList.toggle("-faceup");
-    } else if ($target.offsetParent.localName === "article") {
-      $target.offsetParent.classList.toggle("-faceup");
-    }
+  function handleClickToggleCard($component) {
+    $component.classList.toggle("-faceup");
   }
 
   window.handleClickToggleCard = handleClickToggleCard;
 
-  return ({ srcFront, altFront, srcBack, altBack }) => `
-  <article 
-    class="memory-card" 
-    OnClick="handleClickToggleCard()"
-    >
-    <img
-      class="icon"
-      src= "${srcFront}"
-      alt= "${altFront}"
-    />
-    <img
-      class="icon -back"
-      src= "${srcBack}"
-      alt= "${altBack}"
-    />
-  </article>
+  return ({ src, alt }) => `
+  <div class="memory-card" onClick="handleClickToggleCard(this)">
+    <article class="card">
+      <img
+        class="icon"
+        src="img/icon-collabcode.svg"
+        alt="Icone do Gueio, mascote da collabcode"
+      />
+    </article>
+    <article class="card -back">
+      <img
+        class="icon"
+        src= "${src}"
+        alt= "${alt}"
+      />
+    </article>
+  </div>
   `;
 }

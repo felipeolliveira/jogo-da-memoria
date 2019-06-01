@@ -7,28 +7,20 @@ const $gameWrapper = createGameWrapper();
 const createCard = memoryCard();
 
 const $javascriptCard = createCard({
-  srcFront: "img/icon-collabcode.svg",
-  altFront: "Icone do Gueio, mascote da collabcode",
-  srcBack: "img/icon-js.png",
-  altBack: "Icone da linguagem Javascript"
+  src: "img/icon-js.png",
+  alt: "Icone da linguagem Javascript"
 });
 const $cppCard = createCard({
-  srcFront: "img/icon-collabcode.svg",
-  altFront: "Icone do Gueio, mascote da collabcode",
-  srcBack: "img/icon-c.png",
-  altBack: "Icone da linguagem C++"
+  src: "img/icon-c.png",
+  alt: "Icone da linguagem C++"
 });
 const $bugCard = createCard({
-  srcFront: "img/icon-collabcode.svg",
-  altFront: "Icone do Gueio, mascote da collabcode",
-  srcBack: "img/icon-bug.png",
-  altBack: "Icone do inseto - o bug usado em informática"
+  src: "img/icon-bug.png",
+  alt: "Icone do inseto - o bug usado em informática"
 });
 const $womanCard = createCard({
-  srcFront: "img/icon-collabcode.svg",
-  altFront: "Icone do Gueio, mascote da collabcode",
-  srcBack: "img/icon-woman.png",
-  altBack: "Icone de uma mulher usando um laptop"
+  src: "img/icon-woman.png",
+  alt: "Icone de uma mulher usando um laptop"
 });
 
 $gameWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
