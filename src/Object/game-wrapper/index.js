@@ -16,6 +16,12 @@ export default function crateGameWrapper() {
     }  
   `;
 
+  window.cardsFaceup = [];
+
+  $gameWrapper.addEventListener("click", () => {
+    cardsFaceup = $gameWrapper.querySelectorAll(".memory-card.-faceup .-back");
+  });
+
   document.head.insertAdjacentElement("beforeend", $style);
 
   return $gameWrapper;

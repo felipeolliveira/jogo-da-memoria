@@ -54,41 +54,25 @@ export default function memoryCard() {
   $style.textContent = styles;
   document.head.insertAdjacentElement("beforeend", $style);
 
-  const activeCards = {
-    number: 0,
-    elements: [],
-    timeout: 1500
-  };
+  function handleClickFaceup($component) {
+    if (cardsFaceup.length < 2) {
+      $component.classList.add("-faceup");
+    }
 
-  function handleClickToggleCard($component) {
-    const addClass = () => $component.classList.add("-faceup");
-
-    const resetCardsOffsetTime = () => {
+    if (cardsFaceup.length === 1) {
       setTimeout(() => {
-        activeCards.elements.forEach(element => {
-          element.classList.remove("-faceup");
-          activeCards.number = 0;
-          activeCards.elements = [];
+        cardsFaceup.forEach(memoryCard => {
+          memoryCard.classList.remove("-faceup");
+          cardsFaceup = [];
         });
-      }, activeCards.timeout);
-    };
-
-    if (activeCards.number === 1) {
-      addClass();
-      activeCards.number++;
-      activeCards.elements.push($component);
-      resetCardsOffsetTime();
-    } else if (activeCards.number <= 1) {
-      activeCards.number++;
-      activeCards.elements.push($component);
-      addClass();
+      }, 2000);
     }
   }
 
-  window.handleClickToggleCard = handleClickToggleCard;
+  window.handleClickFaceup = handleClickFaceup;
 
   return ({ src, alt }) => `
-  <div class="memory-card" onClick="handleClickToggleCard(this)">
+  <div class="memory-card" onClick="handleClickFaceup(this)">
     <article class="card">
       <img
         class="icon"
