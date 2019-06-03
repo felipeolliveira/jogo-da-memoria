@@ -54,8 +54,35 @@ export default function memoryCard() {
   $style.textContent = styles;
   document.head.insertAdjacentElement("beforeend", $style);
 
+  const activeCards = {
+    number: 0,
+    elements: [],
+    timeout: 1500
+  };
+
   function handleClickToggleCard($component) {
-    $component.classList.toggle("-faceup");
+    const addClass = () => $component.classList.add("-faceup");
+
+    const resetCardsOffsetTime = () => {
+      setTimeout(() => {
+        activeCards.elements.forEach(element => {
+          element.classList.remove("-faceup");
+          activeCards.number = 0;
+          activeCards.elements = [];
+        });
+      }, activeCards.timeout);
+    };
+
+    if (activeCards.number === 1) {
+      addClass();
+      activeCards.number++;
+      activeCards.elements.push($component);
+      resetCardsOffsetTime();
+    } else if (activeCards.number <= 1) {
+      activeCards.number++;
+      activeCards.elements.push($component);
+      addClass();
+    }
   }
 
   window.handleClickToggleCard = handleClickToggleCard;

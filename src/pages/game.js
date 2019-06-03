@@ -24,8 +24,12 @@ const $womanCard = createCard({
 });
 
 $gameWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $cppCard);
 $gameWrapper.insertAdjacentHTML("beforeend", $cppCard);
 $gameWrapper.insertAdjacentHTML("beforeend", $bugCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $bugCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $womanCard);
 $gameWrapper.insertAdjacentHTML("beforeend", $womanCard);
 
 $root.insertAdjacentElement("beforeend", $gameWrapper);
