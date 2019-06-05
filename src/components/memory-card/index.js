@@ -55,17 +55,8 @@ export default function memoryCard() {
   document.head.insertAdjacentElement("beforeend", $style);
 
   function handleClickFaceup($component) {
-    if (cardsFaceup.length < 2) {
+    if ($cardsFaceup.length < 2) {
       $component.classList.add("-faceup");
-    }
-
-    if (cardsFaceup.length === 1) {
-      setTimeout(() => {
-        cardsFaceup.forEach(memoryCard => {
-          memoryCard.classList.remove("-faceup");
-          cardsFaceup = [];
-        });
-      }, 2000);
     }
   }
 

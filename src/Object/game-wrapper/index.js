@@ -16,10 +16,49 @@ export default function crateGameWrapper() {
     }  
   `;
 
-  window.cardsFaceup = [];
+  window.$cardsFaceup = [];
+  window.$iconCardsFaceup = [];
 
   $gameWrapper.addEventListener("click", () => {
-    cardsFaceup = $gameWrapper.querySelectorAll(".memory-card.-faceup .-back");
+    $cardsFaceup = $gameWrapper.querySelectorAll(
+      ".memory-card.-faceup:not(.-alright)"
+    );
+    $iconCardsFaceup = $gameWrapper.querySelectorAll(
+      ".memory-card.-faceup:not(.-alright) .-back .icon"
+    );
+
+    const isEqualCards = () => {
+      return (
+        $iconCardsFaceup[0].getAttribute("src") ===
+        $iconCardsFaceup[1].getAttribute("src")
+      );
+    };
+
+    const wrongCombination = () => {
+      console.log("Combinações erradas. Tente novamente");
+      setTimeout(() => {
+        $cardsFaceup.forEach(memoryCard => {
+          memoryCard.classList.remove("-faceup");
+        });
+        $cardsFaceup = [];
+        $iconCardsFaceup = [];
+      }, 2000);
+    };
+
+    const rightCombination = () => {
+      $cardsFaceup.forEach(card => card.classList.add("-alright"));
+      console.log("Combinações corretas! Continue...");
+      $cardsFaceup = [];
+      $iconCardsFaceup = [];
+    };
+
+    if ($cardsFaceup.length === 2) {
+      if (isEqualCards()) {
+        rightCombination();
+      } else {
+        wrongCombination();
+      }
+    }
   });
 
   document.head.insertAdjacentElement("beforeend", $style);
