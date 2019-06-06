@@ -13,7 +13,20 @@ export default function crateGameWrapper() {
       padding: 10px 0 20px;
       border-radius: 20px;
       box-shadow: 0 0px 5px rgba(0, 0, 0, 0.15);
-    }  
+    }
+
+    .game-wrapper .-alright{
+      position: relative;
+    }
+
+    .game-wrapper .-alright::after {
+      content: "\u{2714}";
+      font-size: 20px;
+      color: green;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
   `;
 
   window.$cardsFaceup = [];
