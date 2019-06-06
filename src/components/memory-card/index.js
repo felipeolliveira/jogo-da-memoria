@@ -55,8 +55,10 @@ export default function memoryCard() {
   document.head.insertAdjacentElement("beforeend", $style);
 
   function handleClickFaceup($component) {
-    if ($cardsFaceup.length < 2) {
-      $component.classList.add("-faceup");
+    if (!$component.classList.contains("-faceup")) {
+      if ($cardsFaceup.length < 2) {
+        $component.classList.add("-faceup");
+      }
     }
   }
 

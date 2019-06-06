@@ -31,6 +31,7 @@ export default function crateGameWrapper() {
 
   window.$cardsFaceup = [];
   window.$iconCardsFaceup = [];
+  window.score = 0;
 
   $gameWrapper.addEventListener("click", () => {
     $cardsFaceup = $gameWrapper.querySelectorAll(
@@ -55,14 +56,16 @@ export default function crateGameWrapper() {
         });
         $cardsFaceup = [];
         $iconCardsFaceup = [];
-      }, 2000);
+      }, 800);
     };
 
     const rightCombination = () => {
-      $cardsFaceup.forEach(card => card.classList.add("-alright"));
       console.log("Combinações corretas! Continue...");
+      $cardsFaceup.forEach(card => card.classList.add("-alright"));
       $cardsFaceup = [];
       $iconCardsFaceup = [];
+      score++;
+      console.log(score);
     };
 
     if ($cardsFaceup.length === 2) {
