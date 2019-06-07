@@ -54,18 +54,16 @@ export default function memoryCard() {
   $style.textContent = styles;
   document.head.insertAdjacentElement("beforeend", $style);
 
-  function handleClickFaceup($component) {
+  store.handleClickFaceup = $component => {
     if (!$component.classList.contains("-faceup")) {
-      if ($cardsFaceup.length < 2) {
+      if (store.cardsFaceup.length < 2) {
         $component.classList.add("-faceup");
       }
     }
-  }
-
-  window.handleClickFaceup = handleClickFaceup;
+  };
 
   return ({ src, alt }) => `
-  <div class="memory-card" onClick="handleClickFaceup(this)">
+  <div class="memory-card" onClick="store.handleClickFaceup(this)">
     <article class="card">
       <img
         class="icon"
