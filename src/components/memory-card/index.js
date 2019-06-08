@@ -1,4 +1,4 @@
-export default function memoryCard() {
+const memoryCard = () => {
   const $style = document.createElement("style");
   const styles = `
     .memory-card {
@@ -54,16 +54,16 @@ export default function memoryCard() {
   $style.textContent = styles;
   document.head.insertAdjacentElement("beforeend", $style);
 
-  function handleClickFaceup($component) {
-    if ($cardsFaceup.length < 2) {
-      $component.classList.add("-faceup");
+  store.handleClickFaceup = $component => {
+    if (!$component.classList.contains("-faceup")) {
+      if (store.cardsFaceup.length < 2) {
+        $component.classList.add("-faceup");
+      }
     }
-  }
-
-  window.handleClickFaceup = handleClickFaceup;
+  };
 
   return ({ src, alt }) => `
-  <div class="memory-card" onClick="handleClickFaceup(this)">
+  <div class="memory-card" onClick="store.handleClickFaceup(this)">
     <article class="card">
       <img
         class="icon"
@@ -80,4 +80,6 @@ export default function memoryCard() {
     </article>
   </div>
   `;
-}
+};
+
+export default memoryCard;

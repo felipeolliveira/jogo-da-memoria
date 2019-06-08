@@ -1,4 +1,4 @@
-export default function crateGameWrapper() {
+const crateGameWrapper = () => {
   const $gameWrapper = document.createElement("section");
   $gameWrapper.classList.add("game-wrapper");
 
@@ -29,43 +29,46 @@ export default function crateGameWrapper() {
     }
   `;
 
-  window.$cardsFaceup = [];
-  window.$iconCardsFaceup = [];
+  const isEqualCards = () => {
+    return (
+      store.iconCardsFaceup[0].getAttribute("src") ===
+      store.iconCardsFaceup[1].getAttribute("src")
+    );
+  };
 
-  $gameWrapper.addEventListener("click", () => {
-    $cardsFaceup = $gameWrapper.querySelectorAll(
+  const wrongCombination = () => {
+    console.log("Combinações erradas. Tente novamente");
+    setTimeout(() => {
+      store.cardsFaceup.forEach(memoryCard => {
+        memoryCard.classList.remove("-faceup");
+      });
+      store.cardsFaceup = [];
+      store.iconCardsFaceup = [];
+    }, 800);
+  };
+
+  const rightCombination = () => {
+    console.log("Combinações corretas! Continue...");
+    store.cardsFaceup.forEach(card => card.classList.add("-alright"));
+    store.cardsFaceup = [];
+    store.iconCardsFaceup = [];
+    store.score++;
+    console.log("Seu score é: ", store.score);
+  };
+
+  const getOnlyActivesCards = () => {
+    store.cardsFaceup = $gameWrapper.querySelectorAll(
       ".memory-card.-faceup:not(.-alright)"
     );
-    $iconCardsFaceup = $gameWrapper.querySelectorAll(
+    store.iconCardsFaceup = $gameWrapper.querySelectorAll(
       ".memory-card.-faceup:not(.-alright) .-back .icon"
     );
+  };
 
-    const isEqualCards = () => {
-      return (
-        $iconCardsFaceup[0].getAttribute("src") ===
-        $iconCardsFaceup[1].getAttribute("src")
-      );
-    };
+  $gameWrapper.addEventListener("click", () => {
+    getOnlyActivesCards();
 
-    const wrongCombination = () => {
-      console.log("Combinações erradas. Tente novamente");
-      setTimeout(() => {
-        $cardsFaceup.forEach(memoryCard => {
-          memoryCard.classList.remove("-faceup");
-        });
-        $cardsFaceup = [];
-        $iconCardsFaceup = [];
-      }, 2000);
-    };
-
-    const rightCombination = () => {
-      $cardsFaceup.forEach(card => card.classList.add("-alright"));
-      console.log("Combinações corretas! Continue...");
-      $cardsFaceup = [];
-      $iconCardsFaceup = [];
-    };
-
-    if ($cardsFaceup.length === 2) {
+    if (store.cardsFaceup.length === 2) {
       if (isEqualCards()) {
         rightCombination();
       } else {
@@ -77,4 +80,6 @@ export default function crateGameWrapper() {
   document.head.insertAdjacentElement("beforeend", $style);
 
   return $gameWrapper;
-}
+};
+
+export default crateGameWrapper;

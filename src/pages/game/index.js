@@ -1,5 +1,8 @@
-import createGameWrapper from "../Object/game-wrapper/index.js";
-import memoryCard from "../components/memory-card/index.js";
+import createGlobalVariables from "../../global/index.js";
+import createGameWrapper from "../../Object/game-wrapper/index.js";
+import memoryCard from "../../components/memory-card/index.js";
+
+createGlobalVariables();
 
 const $root = document.querySelector("#root");
 const $gameWrapper = createGameWrapper();
@@ -23,13 +26,13 @@ const $womanCard = createCard({
   alt: "Icone de uma mulher usando um laptop"
 });
 
-$gameWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
-$gameWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
 $gameWrapper.insertAdjacentHTML("beforeend", $cppCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $bugCard);
 $gameWrapper.insertAdjacentHTML("beforeend", $cppCard);
-$gameWrapper.insertAdjacentHTML("beforeend", $bugCard);
-$gameWrapper.insertAdjacentHTML("beforeend", $bugCard);
 $gameWrapper.insertAdjacentHTML("beforeend", $womanCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
 $gameWrapper.insertAdjacentHTML("beforeend", $womanCard);
+$gameWrapper.insertAdjacentHTML("beforeend", $bugCard);
 
 $root.insertAdjacentElement("beforeend", $gameWrapper);
