@@ -5,12 +5,12 @@ const crateGameWrapper = () => {
   const $style = document.createElement("style");
   $style.textContent = `
     .game-wrapper {
-      width: 375px;
+      width: 80vw;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      margin: 20px auto;
-      padding: 10px 0 20px;
+      justify-content: center;
+      margin: 10px auto;
+      padding: 10px 0 10px;
       border-radius: 20px;
       box-shadow: 0 0px 5px rgba(0, 0, 0, 0.15);
     }
@@ -26,6 +26,22 @@ const crateGameWrapper = () => {
       position: absolute;
       top: 5px;
       right: 5px;
+    }
+
+    @media (max-width: 460px) {
+      .game-wrapper {
+        width: 100vw;
+      }
+    }
+
+    @media (min-width: 825px) {
+      .game-wrapper {
+        width: 700px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   `;
 

@@ -11,7 +11,7 @@ const memoryCard = () => {
       justify-content: center;
       align-items: center;
       box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-      margin-top: 10px;
+      margin: 5px;
       position: relative;
     }
     .memory-card > .card {
@@ -49,6 +49,13 @@ const memoryCard = () => {
     }
     .memory-card .card.-faceup > .icon.-back {
       display: inline;
+    }
+
+    @media (max-width: 360px) {
+      .memory-card {
+        width: 140px;
+        height: 140px;
+      }
     }
   `;
   $style.textContent = styles;
