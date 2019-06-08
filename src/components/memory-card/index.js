@@ -1,4 +1,4 @@
-export default function memoryCard() {
+const memoryCard = () => {
   const $style = document.createElement("style");
   const styles = `
     .memory-card {
@@ -80,4 +80,6 @@ export default function memoryCard() {
     </article>
   </div>
   `;
-}
+};
+
+export default memoryCard;

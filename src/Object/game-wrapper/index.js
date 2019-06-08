@@ -1,4 +1,4 @@
-export default function crateGameWrapper() {
+const crateGameWrapper = () => {
   const $gameWrapper = document.createElement("section");
   $gameWrapper.classList.add("game-wrapper");
 
@@ -29,14 +29,14 @@ export default function crateGameWrapper() {
     }
   `;
 
-  function isEqualCards() {
+  const isEqualCards = () => {
     return (
       store.iconCardsFaceup[0].getAttribute("src") ===
       store.iconCardsFaceup[1].getAttribute("src")
     );
-  }
+  };
 
-  function wrongCombination() {
+  const wrongCombination = () => {
     console.log("Combinações erradas. Tente novamente");
     setTimeout(() => {
       store.cardsFaceup.forEach(memoryCard => {
@@ -45,25 +45,25 @@ export default function crateGameWrapper() {
       store.cardsFaceup = [];
       store.iconCardsFaceup = [];
     }, 800);
-  }
+  };
 
-  function rightCombination() {
+  const rightCombination = () => {
     console.log("Combinações corretas! Continue...");
     store.cardsFaceup.forEach(card => card.classList.add("-alright"));
     store.cardsFaceup = [];
     store.iconCardsFaceup = [];
     store.score++;
     console.log("Seu score é: ", store.score);
-  }
+  };
 
-  function getOnlyActivesCards() {
+  const getOnlyActivesCards = () => {
     store.cardsFaceup = $gameWrapper.querySelectorAll(
       ".memory-card.-faceup:not(.-alright)"
     );
     store.iconCardsFaceup = $gameWrapper.querySelectorAll(
       ".memory-card.-faceup:not(.-alright) .-back .icon"
     );
-  }
+  };
 
   $gameWrapper.addEventListener("click", () => {
     getOnlyActivesCards();
@@ -80,4 +80,6 @@ export default function crateGameWrapper() {
   document.head.insertAdjacentElement("beforeend", $style);
 
   return $gameWrapper;
-}
+};
+
+export default crateGameWrapper;
