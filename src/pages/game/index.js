@@ -1,11 +1,14 @@
 import createGlobalVariables from "../../global/index.js";
 import createGameWrapper from "../../Object/game-wrapper/index.js";
+import scoreBar from "../../components/score-bar/index.js";
 import memoryCard from "../../components/memory-card/index.js";
 
 createGlobalVariables();
 
 const $root = document.querySelector("#root");
+
 const $gameWrapper = createGameWrapper();
+const $scoreBar = scoreBar();
 
 const createCard = memoryCard();
 
@@ -35,4 +38,5 @@ $gameWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
 $gameWrapper.insertAdjacentHTML("beforeend", $womanCard);
 $gameWrapper.insertAdjacentHTML("beforeend", $bugCard);
 
+$root.insertAdjacentHTML("afterbegin", $scoreBar);
 $root.insertAdjacentElement("beforeend", $gameWrapper);
