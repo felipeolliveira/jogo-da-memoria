@@ -53,18 +53,20 @@ const crateGameWrapper = () => {
   };
 
   const wrongCombination = () => {
-    console.log("Combinações erradas. Tente novamente");
+    $gameWrapper.removeEventListener("click", handleWrapperEventListener);
+
     setTimeout(() => {
       store.cardsFaceup.forEach(memoryCard => {
         memoryCard.classList.remove("-faceup");
       });
+
       store.cardsFaceup = [];
       store.iconCardsFaceup = [];
-    }, 800);
+      $gameWrapper.addEventListener("click", handleWrapperEventListener);
+    }, 1500);
   };
 
   const rightCombination = () => {
-    console.log("Combinações corretas! Continue...");
     store.cardsFaceup.forEach(card => card.classList.add("-alright"));
     store.cardsFaceup = [];
     store.iconCardsFaceup = [];
@@ -81,7 +83,7 @@ const crateGameWrapper = () => {
     );
   };
 
-  $gameWrapper.addEventListener("click", () => {
+  const handleWrapperEventListener = () => {
     getOnlyActivesCards();
 
     if (store.cardsFaceup.length === 2) {
@@ -91,7 +93,9 @@ const crateGameWrapper = () => {
         wrongCombination();
       }
     }
-  });
+  };
+
+  $gameWrapper.addEventListener("click", handleWrapperEventListener);
 
   document.head.insertAdjacentElement("beforeend", $style);
 
