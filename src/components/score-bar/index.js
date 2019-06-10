@@ -1,6 +1,9 @@
-const scoreBar = () => {
-  const $style = document.createElement("style");
-  $style.textContent = `
+const scoreBar = (function() {
+  const module = {};
+
+  module.create = () => {
+    const $style = document.createElement("style");
+    $style.textContent = `
     .score-bar {
       width: 50px;
       height: 50px;
@@ -19,15 +22,16 @@ const scoreBar = () => {
       color: #fff;
     }
   `;
-  document.head.insertAdjacentElement("beforeend", $style);
+    document.head.insertAdjacentElement("beforeend", $style);
 
-  const create = `
+    return `
     <header class="score-bar">
       <span class="number">0</span>
     </header>
   `;
+  };
 
-  return create;
-};
-
-export default scoreBar;
+  return {
+    create: module.create
+  };
+})();

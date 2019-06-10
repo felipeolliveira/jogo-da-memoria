@@ -1,16 +1,9 @@
-import createGlobalVariables from "../../global/index.js";
-import createGameWrapper from "../../Object/game-wrapper/index.js";
-import scoreBar from "../../components/score-bar/index.js";
-import memoryCard from "../../components/memory-card/index.js";
-
-createGlobalVariables();
-
 const $root = document.querySelector("#root");
 
-const $gameWrapper = createGameWrapper();
-const $scoreBar = scoreBar();
+const $gameWrapper = gameWrapper.create();
+const $scoreBar = scoreBar.create();
 
-const createCard = memoryCard();
+const createCard = memoryCard.create();
 
 const $javascriptCard = createCard({
   src: "img/icon-js.png",
