@@ -29,14 +29,42 @@ const $womanCard = createCard({
   alt: "Icone de uma mulher usando um laptop"
 });
 
-$gameWrapper.insertAdjacentHTML("beforeend", $cppCard);
-$gameWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
-$gameWrapper.insertAdjacentHTML("beforeend", $bugCard);
-$gameWrapper.insertAdjacentHTML("beforeend", $cppCard);
-$gameWrapper.insertAdjacentHTML("beforeend", $womanCard);
-$gameWrapper.insertAdjacentHTML("beforeend", $javascriptCard);
-$gameWrapper.insertAdjacentHTML("beforeend", $womanCard);
-$gameWrapper.insertAdjacentHTML("beforeend", $bugCard);
+const newRandomCards = () => {
+  const selectCards = [$javascriptCard, $cppCard, $bugCard, $womanCard];
+
+  const duplicateCards = () => {
+    const cards = [];
+    for (let i = 0; i < 2; i++) {
+      cards.push(...selectCards);
+    }
+    return cards;
+  };
+
+  const cardsShuffler = () => {
+    let cards = duplicateCards();
+    let finalCards = [];
+
+    while (cards.length) {
+      const randomNumber = Math.floor(Math.random() * cards.length);
+      const randomCard = cards[randomNumber];
+      const indexCard = cards.indexOf(randomCard);
+
+      if (indexCard > -1) {
+        finalCards.push(randomCard);
+        cards.splice(indexCard, 1);
+      }
+    }
+
+    return finalCards;
+  };
+
+  const newCards = cardsShuffler();
+  newCards.forEach(card => {
+    $gameWrapper.insertAdjacentHTML("beforeend", card);
+  });
+};
+
+newRandomCards();
 
 $root.insertAdjacentHTML("afterbegin", $scoreBar);
 $root.insertAdjacentElement("beforeend", $gameWrapper);
