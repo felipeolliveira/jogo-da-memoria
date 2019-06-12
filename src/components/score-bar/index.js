@@ -8,18 +8,17 @@ const scoreBar = (function() {
       width: 200px;
       height: 50px;
       margin: 0 auto;
-      background-color: #f25a70;
+      background-color: #3a4042;
       margin-bottom: 20px;
       border-radius: 0 0 10px 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
     }
     .score-bar > .number {
       font-family: "Open Sans", Calibri, Arial;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
       color: #fff;
+      line-height: 50px;
     }
     `;
     document.head.insertAdjacentElement("beforeend", $style);

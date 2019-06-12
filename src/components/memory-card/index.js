@@ -65,7 +65,7 @@ const memoryCard = (function() {
     document.head.insertAdjacentElement("beforeend", $style);
 
     return ({ src, alt }) => `
-    <div class="memory-card -faceup" onClick="memoryCard.handleClick(this)">
+    <div class="memory-card" onClick="memoryCard.handleClick(this)">
       <article class="card">
         <img
           class="icon"
