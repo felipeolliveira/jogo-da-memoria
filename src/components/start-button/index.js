@@ -7,7 +7,7 @@ const startButton = (function() {
       .start-button {
         width: 80px;
         height: 80px;
-        background-color: #ffd166;
+        background-color: #66ff68;
         position: absolute;
         bottom: 10px;
         left: 50%;
@@ -17,6 +17,7 @@ const startButton = (function() {
         color: #3a4042;
         text-transform: uppercase;
         font-weight: bold;
+        cursor: pointer;
       }
     `;
 
