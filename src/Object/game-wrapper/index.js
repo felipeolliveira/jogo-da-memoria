@@ -1,10 +1,7 @@
 const gameWrapper = (function() {
   const module = {};
 
-  module.create = () => {
-    const $gameWrapper = document.createElement("section");
-    $gameWrapper.classList.add("game-wrapper");
-
+  module._style = () => {
     const $style = document.createElement("style");
     $style.textContent = `
       .game-wrapper {
@@ -47,10 +44,15 @@ const gameWrapper = (function() {
         }
       }
     `;
-
-    $gameWrapper.addEventListener("click", module._handleWrapperEventListener);
-
     document.head.insertAdjacentElement("beforeend", $style);
+  };
+
+  module.create = () => {
+    module._style();
+
+    const $gameWrapper = document.createElement("section");
+    $gameWrapper.classList.add("game-wrapper");
+    $gameWrapper.addEventListener("click", module._handleWrapperEventListener);
 
     return $gameWrapper;
   };

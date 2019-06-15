@@ -21,7 +21,8 @@ const $womanCard = createCard({
   alt: "Icone de uma mulher usando um laptop"
 });
 
-( const _newRandomCards = () => {
+const newRandomCards = () => {
+  $gameWrapper.innerHTML = "";
   const selectCards = [$javascriptCard, $cppCard, $bugCard, $womanCard];
 
   const duplicateCards = () => {
@@ -51,12 +52,13 @@ const $womanCard = createCard({
   };
 
   const newCards = cardsShuffler();
+
   newCards.forEach(card => {
     $gameWrapper.insertAdjacentHTML("beforeend", card);
   });
 };
 
-_newRandomCards())();
+newRandomCards();
 
 const $startButton = startButton.create();
 

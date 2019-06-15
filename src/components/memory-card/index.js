@@ -1,7 +1,7 @@
 const memoryCard = (function() {
   const module = {};
 
-  module.create = () => {
+  module._style = () => {
     $style = document.createElement("style");
     styles = `
       .memory-card {
@@ -63,6 +63,10 @@ const memoryCard = (function() {
     `;
     $style.textContent = styles;
     document.head.insertAdjacentElement("beforeend", $style);
+  };
+
+  module.create = () => {
+    module._style();
 
     return ({ src, alt }) => `
     <div class="memory-card" onClick="memoryCard.handleClick(this)">
