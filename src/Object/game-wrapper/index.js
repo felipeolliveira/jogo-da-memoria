@@ -48,24 +48,24 @@ const gameWrapper = (function() {
       }
     `;
 
-    $gameWrapper.addEventListener("click", module.handleWrapperEventListener);
+    $gameWrapper.addEventListener("click", module._handleWrapperEventListener);
 
     document.head.insertAdjacentElement("beforeend", $style);
 
     return $gameWrapper;
   };
 
-  module.isEqualCards = () => {
+  module._isEqualCards = () => {
     return (
       store.iconCardsFaceup[0].getAttribute("src") ===
       store.iconCardsFaceup[1].getAttribute("src")
     );
   };
 
-  module.wrongCombination = () => {
+  module._wrongCombination = () => {
     $gameWrapper.removeEventListener(
       "click",
-      module.handleWrapperEventListener
+      module._handleWrapperEventListener
     );
 
     setTimeout(() => {
@@ -75,11 +75,14 @@ const gameWrapper = (function() {
 
       store.cardsFaceup = [];
       store.iconCardsFaceup = [];
-      $gameWrapper.addEventListener("click", module.handleWrapperEventListener);
+      $gameWrapper.addEventListener(
+        "click",
+        module._handleWrapperEventListener
+      );
     }, 800);
   };
 
-  module.rightCombination = () => {
+  module._rightCombination = () => {
     store.cardsFaceup.forEach(card => card.classList.add("-alright"));
     store.cardsFaceup = [];
     store.iconCardsFaceup = [];
@@ -87,7 +90,7 @@ const gameWrapper = (function() {
     scoreBar.counterScore();
   };
 
-  module.getOnlyActivesCards = () => {
+  module._getOnlyActivesCards = () => {
     store.cardsFaceup = $gameWrapper.querySelectorAll(
       ".memory-card.-faceup:not(.-alright)"
     );
@@ -96,14 +99,14 @@ const gameWrapper = (function() {
     );
   };
 
-  module.handleWrapperEventListener = () => {
-    module.getOnlyActivesCards();
+  module._handleWrapperEventListener = () => {
+    module._getOnlyActivesCards();
 
     if (store.cardsFaceup.length === 2) {
-      if (module.isEqualCards()) {
-        module.rightCombination();
+      if (module._isEqualCards()) {
+        module._rightCombination();
       } else {
-        module.wrongCombination();
+        module._wrongCombination();
       }
     }
   };

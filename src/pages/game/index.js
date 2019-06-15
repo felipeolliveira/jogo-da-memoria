@@ -1,11 +1,9 @@
 const $root = document.querySelector("#root");
 
-const $gameWrapper = gameWrapper.create();
 const $scoreBar = scoreBar.create();
-const $startButton = startButton.create();
 
+const $gameWrapper = gameWrapper.create();
 const createCard = memoryCard.create();
-
 const $javascriptCard = createCard({
   src: "img/icon-js.png",
   alt: "Icone da linguagem Javascript"
@@ -23,7 +21,7 @@ const $womanCard = createCard({
   alt: "Icone de uma mulher usando um laptop"
 });
 
-const newRandomCards = () => {
+( const _newRandomCards = () => {
   const selectCards = [$javascriptCard, $cppCard, $bugCard, $womanCard];
 
   const duplicateCards = () => {
@@ -58,7 +56,9 @@ const newRandomCards = () => {
   });
 };
 
-newRandomCards();
+_newRandomCards())();
+
+const $startButton = startButton.create();
 
 $root.insertAdjacentHTML("afterbegin", $scoreBar);
 $root.insertAdjacentElement("beforeend", $gameWrapper);
