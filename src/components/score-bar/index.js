@@ -24,6 +24,11 @@ const scoreBar = (function() {
     document.head.insertAdjacentElement("beforeend", $style);
   };
 
+  module.counterScore = () => {
+    const $number = document.querySelector(".score-bar > .number");
+    $number.textContent = store.score;
+  };
+
   module.create = () => {
     module._style();
 
@@ -35,6 +40,7 @@ const scoreBar = (function() {
   };
 
   return {
-    create: module.create
+    create: module.create,
+    counterScore: module.counterScore
   };
 })();
