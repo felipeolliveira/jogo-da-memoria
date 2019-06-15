@@ -2,6 +2,7 @@ const $root = document.querySelector("#root");
 
 const $gameWrapper = gameWrapper.create();
 const $scoreBar = scoreBar.create();
+const $startButton = startButton.create();
 
 const createCard = memoryCard.create();
 
@@ -61,3 +62,4 @@ newRandomCards();
 
 $root.insertAdjacentHTML("afterbegin", $scoreBar);
 $root.insertAdjacentElement("beforeend", $gameWrapper);
+$root.insertAdjacentHTML("beforeend", $startButton);

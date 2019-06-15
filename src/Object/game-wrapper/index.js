@@ -84,7 +84,7 @@ const gameWrapper = (function() {
     store.cardsFaceup = [];
     store.iconCardsFaceup = [];
     store.score++;
-    console.log("Seu score é: ", store.score);
+    scoreBar.counterScore();
   };
 
   module.getOnlyActivesCards = () => {

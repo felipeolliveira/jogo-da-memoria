@@ -1,28 +1,36 @@
 const scoreBar = (function() {
   const module = {};
 
-  module.create = () => {
+  module._style = function() {
     const $style = document.createElement("style");
     $style.textContent = `
     .score-bar {
-      width: 50px;
+      width: 200px;
       height: 50px;
       margin: 0 auto;
-      background-color: #f25a70;
+      background-color: #3a4042;
       margin-bottom: 20px;
-      border-radius: 0 0 25px 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      border-radius: 0 0 10px 10px;
+      text-align: center;
     }
     .score-bar > .number {
       font-family: "Open Sans", Calibri, Arial;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
       color: #fff;
+      line-height: 50px;
     }
-  `;
+    `;
     document.head.insertAdjacentElement("beforeend", $style);
+  };
+
+  module.counterScore = () => {
+    const $number = document.querySelector(".score-bar > .number");
+    $number.textContent = store.score;
+  };
+
+  module.create = () => {
+    module._style();
 
     return `
     <header class="score-bar">
@@ -32,6 +40,7 @@ const scoreBar = (function() {
   };
 
   return {
-    create: module.create
+    create: module.create,
+    counterScore: module.counterScore
   };
 })();
