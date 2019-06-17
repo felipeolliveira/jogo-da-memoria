@@ -18,6 +18,7 @@ const startButton = (function() {
         text-transform: uppercase;
         font-weight: bold;
         cursor: pointer;
+        z-index: 50;
       }
     `;
 

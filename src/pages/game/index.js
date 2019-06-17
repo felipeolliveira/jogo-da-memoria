@@ -61,7 +61,9 @@ const newRandomCards = () => {
 newRandomCards();
 
 const $startButton = startButton.create();
+const $overlayLayer = overlayLayer.render();
 
-$root.insertAdjacentHTML("afterbegin", $scoreBar);
-$root.insertAdjacentElement("beforeend", $gameWrapper);
 $root.insertAdjacentHTML("beforeend", $startButton);
+$root.insertAdjacentHTML("beforeend", $overlayLayer);
+$root.insertAdjacentHTML("beforeend", $scoreBar);
+$root.insertAdjacentElement("beforeend", $gameWrapper);
