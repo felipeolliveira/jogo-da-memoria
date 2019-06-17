@@ -5,13 +5,13 @@ const startButton = (function() {
     const $style = document.createElement("style");
     $style.textContent = `
       .start-button {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
         background-color: #66ff68;
         position: absolute;
-        bottom: 10px;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         border-radius: 50%;
         box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
         color: #3a4042;
@@ -20,20 +20,33 @@ const startButton = (function() {
         cursor: pointer;
         z-index: 50;
       }
+      .start-button.-fadeout {
+        transition: .5s;
+        transform: translate(-50%, -30%);
+        opacity: 0;
+      }
     `;
 
     document.head.insertBefore($style, null);
   };
 
-  module.handleClick = () => {
-    console.log("clique no botão");
+  module.handleClick = event => {
+    const $startButton = event;
+    const $overlayLayer = document.querySelector(".overlay-layer");
+
+    $overlayLayer.classList.add("-fadeout");
+    $startButton.classList.add("-fadeout");
+    // $startButton.classList.add("-fadeout");
+    // setTimeout(() => {
+    //   $overlayLayer.classList.add("-fadeout");
+    // }, 1500);
   };
 
   module.create = () => {
     module._style();
 
     return `
-      <button class="start-button" onClick="startButton.handleClick()">Start</button>
+      <button class="start-button" onClick="startButton.handleClick(this)">Start</button>
     `;
   };
 

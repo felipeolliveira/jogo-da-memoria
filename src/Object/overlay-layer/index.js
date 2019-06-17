@@ -5,13 +5,18 @@ const overlayLayer = (function() {
     const $style = document.createElement("style");
     $style.textContent = `
       .overlay-layer {
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         background-color: rgba(0, 0, 0, 0.95);
         position: absolute;
         top: 0;
         left: 0;
         z-index: 40;
+      }
+      .overlay-layer.-fadeout {
+        transition: .8s .4s;
+        opacity: 0;
+        z-index: 0;
       }
     `;
     document.head.insertAdjacentElement("beforeend", $style);
