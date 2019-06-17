@@ -25,15 +25,20 @@ const startButton = (function() {
     document.head.insertBefore($style, null);
   };
 
+  module.handleClick = () => {
+    console.log("clique no botão");
+  };
+
   module.create = () => {
     module._style();
 
     return `
-      <button class="start-button">Start</button>
+      <button class="start-button" onClick="startButton.handleClick()">Start</button>
     `;
   };
 
   return {
-    create: module.create
+    create: module.create,
+    handleClick: module.handleClick
   };
 })();
