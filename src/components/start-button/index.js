@@ -7,52 +7,34 @@ const startButton = (function() {
       .start-button {
         width: 100px;
         height: 100px;
-        background-color: #66ff68;
+        background-color: #2ecc71;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 50%;
         box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-        color: #3a4042;
+        color: #fff;
         text-transform: uppercase;
         font-weight: bold;
         cursor: pointer;
         z-index: 50;
-      }
-      .start-button.-fadeout {
-        transition: opacity .5s, transform .5s, z-index .5s .5s;
-        transform: translate(-50%, -30%);
-        opacity: 0;
-        z-index: 0;
       }
     `;
 
     document.head.insertBefore($style, null);
   };
 
-  module.handleClick = event => {
-    const $startButton = event;
-    const $overlayLayer = document.querySelector(".overlay-layer");
-
-    $overlayLayer.classList.add("-fadeout");
-    $startButton.classList.add("-fadeout");
-    // $startButton.classList.add("-fadeout");
-    // setTimeout(() => {
-    //   $overlayLayer.classList.add("-fadeout");
-    // }, 1500);
-  };
-
-  module.create = () => {
+  module.render = content => {
     module._style();
 
     return `
-      <button class="start-button" onClick="startButton.handleClick(this)">Start</button>
+      <button class="start-button">${content}</button>
     `;
   };
 
   return {
-    create: module.create,
+    render: module.render,
     handleClick: module.handleClick
   };
 })();

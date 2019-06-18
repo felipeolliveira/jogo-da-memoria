@@ -1,9 +1,10 @@
 const $root = document.querySelector("#root");
 
 const $scoreBar = scoreBar.create();
-
 const $gameWrapper = gameWrapper.create();
+const $layerStart = layerStart.render();
 const createCard = memoryCard.create();
+
 const $javascriptCard = createCard({
   src: "img/icon-js.png",
   alt: "Icone da linguagem Javascript"
@@ -60,10 +61,6 @@ const newRandomCards = () => {
 
 newRandomCards();
 
-const $startButton = startButton.create();
-const $overlayLayer = overlayLayer.render();
-
-$root.insertAdjacentHTML("beforeend", $startButton);
-$root.insertAdjacentHTML("beforeend", $overlayLayer);
+$root.insertAdjacentHTML("beforeend", $layerStart);
 $root.insertAdjacentHTML("beforeend", $scoreBar);
 $root.insertAdjacentElement("beforeend", $gameWrapper);

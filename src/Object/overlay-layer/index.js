@@ -13,11 +13,6 @@ const overlayLayer = (function() {
         left: 0;
         z-index: 40;
       }
-      .overlay-layer.-fadeout {
-        transition: opacity .8s .4s, z-index .4s .8s;
-        opacity: 0;
-        z-index: 0;
-      }
     `;
     document.head.insertAdjacentElement("beforeend", $style);
   };
