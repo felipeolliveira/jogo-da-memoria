@@ -21,9 +21,10 @@ const startButton = (function() {
         z-index: 50;
       }
       .start-button.-fadeout {
-        transition: .5s;
+        transition: opacity .5s, transform .5s, z-index .5s .5s;
         transform: translate(-50%, -30%);
         opacity: 0;
+        z-index: 0;
       }
     `;
 
