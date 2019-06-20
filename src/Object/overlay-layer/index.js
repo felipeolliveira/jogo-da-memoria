@@ -7,7 +7,7 @@ const overlayLayer = (function() {
       .overlay-layer {
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95);
+        background-color: rgba(0, 0, 0, 0.70);
         position: absolute;
         top: 0;
         left: 0;

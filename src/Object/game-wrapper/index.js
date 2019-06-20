@@ -9,7 +9,7 @@ const gameWrapper = (function() {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 10px auto;
+        margin: 70px auto 0px;
         padding: 10px 0 10px;
         border-radius: 20px;
         box-shadow: 0 0px 5px rgba(0, 0, 0, 0.15);

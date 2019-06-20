@@ -7,11 +7,15 @@ const scoreBar = (function() {
     .score-bar {
       width: 200px;
       height: 50px;
-      margin: 0 auto;
       background-color: #3a4042;
       margin-bottom: 20px;
       border-radius: 0 0 10px 10px;
       text-align: center;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 35;
     }
     .score-bar > .number {
       font-family: "Open Sans", Calibri, Arial;
