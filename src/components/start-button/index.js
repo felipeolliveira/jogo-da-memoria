@@ -20,6 +20,11 @@ const startButton = (function() {
         cursor: pointer;
         z-index: 50;
       }
+      .start-button.-fadeout {
+        transition: .5s;
+        transform: translate(-50%, -30%);
+        opacity: 0;
+      }
     `;
 
     document.head.insertBefore($style, null);
@@ -34,7 +39,6 @@ const startButton = (function() {
   };
 
   return {
-    render: module.render,
-    handleClick: module.handleClick
+    render: module.render
   };
 })();

@@ -1,31 +1,20 @@
 const layerStart = (function() {
   const module = {};
 
-  module._style = () => {
-    const $style = document.createElement("style");
+  module.handleClick = $component => {
+    if (event.target.classList.contains("start-button")) {
+      const listChilds = $component.children;
 
-    $style.textContent = `
-    .layer-start.-fadeout > .overlay-layer {
-      transition: opacity .8s .4s;
-      opacity: 0;
-    }
-    .layer-start.-fadeout > .start-button {
-      transition: .5s;
-      transform: translate(-50%, -30%);
-      opacity: 0;
-    }
-    `;
-    document.head.insertAdjacentElement("beforeend", $style);
-  };
+      for (const child of listChilds) {
+        child.classList.add("-fadeout");
+        console.log(child);
+      }
 
-  module.handleClick = component => {
-    component.classList.add("-fadeout");
-    setTimeout(() => component.remove(), 1500);
+      setTimeout(() => $component.remove(), 1200);
+    }
   };
 
   module.render = () => {
-    module._style();
-
     const $overlayLayer = overlayLayer.render();
     const $startButton = startButton.render("Start");
 
