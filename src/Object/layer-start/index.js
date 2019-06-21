@@ -9,7 +9,7 @@ const layerStart = (function() {
   };
 
   module.handleTransitionEnd = $component => {
-    if (event.target.classList.contains("overlay-layer")) $component.remove();
+    // if (event.target.classList.contains("overlay-layer")) $component.remove();
   };
 
   module.render = () => {

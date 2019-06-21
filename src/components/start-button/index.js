@@ -19,10 +19,14 @@ const startButton = (function() {
         font-weight: bold;
         cursor: pointer;
         z-index: 50;
+        transform-origin: center;
+        transition: .4s cubic-bezier(.68,-0.55,.27,1.55);
+      }
+      .start-button:hover {
+        transform: translate(-50%, -50%) scale(1.2);
       }
       .start-button.-fadeout {
-        transition: .2s;
-        transform: translate(-50%, -30%);
+        transform: translate(-50%, 50%) scale(0);
         opacity: 0;
       }
     `;

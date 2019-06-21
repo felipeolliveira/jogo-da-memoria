@@ -9,12 +9,14 @@ const overlayLayer = (function() {
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.70);
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         z-index: 40;
+        transform-origin: bottom;
+        transition: .3s .25s;
       }
       .overlay-layer.-fadeout {
-        transition: opacity .2s .2s;
+        transform: scaleY(0);
         opacity: 0;
       }
     `;
