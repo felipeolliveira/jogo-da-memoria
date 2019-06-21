@@ -14,7 +14,7 @@ const overlayLayer = (function() {
         z-index: 40;
       }
       .overlay-layer.-fadeout {
-        transition: opacity .2s;
+        transition: opacity .2s .2s;
         opacity: 0;
       }
     `;
