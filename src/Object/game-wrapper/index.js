@@ -9,7 +9,7 @@ const gameWrapper = (function() {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 70px auto 0px;
+        margin: 70px auto 20px;
         padding: 10px 0 10px;
         border-radius: 20px;
         box-shadow: 0 0px 5px rgba(0, 0, 0, 0.15);
@@ -33,15 +33,33 @@ const gameWrapper = (function() {
           width: 100vw;
         }
       }
-  
-      @media (min-width: 825px) {
+
+      @media (min-width: 620px) {
         .game-wrapper {
-          width: 700px;
+          width: 520px;
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
           margin: 0;
+        }
+      }
+  
+      @media (min-width: 825px) {
+        .game-wrapper {
+          width: 700px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          margin: 0;
+        }
+      }
+
+      @media (max-height: 540px) {
+        .game-wrapper {
+          position: static;
+          transform: none;
+          margin: 70px auto 20px;
         }
       }
     `;

@@ -18,7 +18,6 @@ const startButton = (function() {
         text-transform: uppercase;
         font-weight: bold;
         cursor: pointer;
-        z-index: 50;
         transform-origin: center;
         transition: .4s cubic-bezier(.68,-0.55,.27,1.55);
       }

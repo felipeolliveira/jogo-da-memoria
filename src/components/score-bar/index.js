@@ -15,7 +15,7 @@ const scoreBar = (function() {
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 35;
+      z-index: 20;
     }
     .score-bar > .number {
       font-family: "Open Sans", Calibri, Arial;
