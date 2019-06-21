@@ -21,7 +21,7 @@ const startButton = (function() {
         z-index: 50;
       }
       .start-button.-fadeout {
-        transition: .5s;
+        transition: .2s;
         transform: translate(-50%, -30%);
         opacity: 0;
       }

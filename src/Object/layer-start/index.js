@@ -2,16 +2,29 @@ const layerStart = (function() {
   const module = {};
 
   module.handleClick = $component => {
-    if (event.target.classList.contains("start-button")) {
-      const listChilds = $component.children;
+    const $startButton = $component.querySelector(".start-button");
+    const $overlayLayer = $component.querySelector(".overlay-layer");
 
-      for (const child of listChilds) {
-        child.classList.add("-fadeout");
-        console.log(child);
-      }
-
-      setTimeout(() => $component.remove(), 1200);
+    if (event.target === $startButton) {
+      $startButton.classList.add("-fadeout");
+      setTimeout(() => {
+        $overlayLayer.classList.add("-fadeout");
+      }, 200);
+      setTimeout(() => {
+        $component.remove();
+      }, 400);
     }
+
+    // if (event.target.classList.contains("start-button")) {
+    //   const listChilds = $component.children;
+
+    //   for (const child of listChilds) {
+    //     child.classList.add("-fadeout");
+    //     console.log(child);
+    //   }
+
+    //   setTimeout(() => $component.remove(), 1200);
+    // }
   };
 
   module.render = () => {
