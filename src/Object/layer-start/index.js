@@ -16,7 +16,7 @@ const layerStart = (function() {
 
   module.render = () => {
     const $overlayLayer = overlayLayer.render();
-    const $startButton = startButton.render("Start");
+    const $startButton = startButton.render("Start", "#2ecc71");
 
     return `
       <div class="layer-start" onClick="layerStart.handleClick(this)">

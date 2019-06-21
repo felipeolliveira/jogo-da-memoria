@@ -1,13 +1,13 @@
 const startButton = (function() {
   const module = {};
 
-  module._style = () => {
+  module._style = bgColor => {
     const $style = document.createElement("style");
     $style.textContent = `
       .start-button {
         width: 100px;
         height: 100px;
-        background-color: #2ecc71;
+        background-color: ${bgColor};
         position: absolute;
         top: 50%;
         left: 50%;
@@ -30,8 +30,8 @@ const startButton = (function() {
     document.head.insertBefore($style, null);
   };
 
-  module.render = content => {
-    module._style();
+  module.render = (content, bgColor) => {
+    module._style(bgColor);
 
     return `
       <button class="start-button">${content}</button>
