@@ -1,15 +1,13 @@
 (function() {
   const $root = document.querySelector("#root");
 
-  const createButton = flatButton.render();
-
-  const $loginButton = createButton({
+  const $loginButton = flatButton.render({
     content: "Log in"
   });
 
-  const $signUp = createButton({
+  const $signUp = flatButton.render({
     content: "Sign up",
-    className: "-active"
+    active: true
   });
 
   $root.insertAdjacentHTML("beforeend", $loginButton);
