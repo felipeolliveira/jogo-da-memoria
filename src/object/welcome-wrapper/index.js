@@ -1,16 +1,15 @@
-const gueioLogo = (function() {
+const welcomeWrapper = (function() {
   const module = {};
 
   module._style = () => {
     const $style = document.createElement("style");
 
     $style.textContent = `
-      .gueio-logo {
-        width: 256px;
-        height: 256px;
-        padding: 34px 41px;
-        border-radius: 50%;
-        background-color: #ffffff;
+      .welcome-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-74px);
       }
     `;
 
@@ -19,7 +18,11 @@ const gueioLogo = (function() {
 
   module.render = () => {
     module._style();
-    return `<img class="gueio-logo" src="/img/icon-collabcode.svg" />`;
+
+    return `<div class="welcome-wrapper">
+      ${gueioLogo.render()}
+      ${welcomeMessage.render("Hello")}
+    </div>`;
   };
 
   return {
