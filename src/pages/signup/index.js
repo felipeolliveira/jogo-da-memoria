@@ -10,6 +10,9 @@
     active: true
   });
 
+  const $gueioLogo = gueioLogo.render();
+
   $root.insertAdjacentHTML("beforeend", $loginButton);
   $root.insertAdjacentHTML("beforeend", $signUp);
+  $root.insertAdjacentHTML("beforeend", $gueioLogo);
 })();
