@@ -6,10 +6,8 @@ const welcomeWrapper = (function() {
 
     $style.textContent = `
       .welcome-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transform: translateY(-74px);
+        text-align: center;
+        transform: translateY(-25%);
       }
     `;
 
