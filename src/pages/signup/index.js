@@ -10,7 +10,9 @@
     active: true
   });
 
-  const $welcomeWrapper = welcomeWrapper.render();
+  const $gueioLogo = gueioLogo.render();
+  const $welcomeMessage = welcomeMessage.render("Hello");
+  const $welcomeWrapper = welcomeWrapper.render($gueioLogo, $welcomeMessage);
 
   $root.insertAdjacentHTML("beforeend", $loginButton);
   $root.insertAdjacentHTML("beforeend", $signUp);

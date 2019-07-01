@@ -16,12 +16,11 @@ const welcomeWrapper = (function() {
     document.head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = () => {
+  module.render = (...children) => {
     module._style();
 
     return `<div class="welcome-wrapper">
-      ${gueioLogo.render()}
-      ${welcomeMessage.render("Hello")}
+      ${children.join("")}
     </div>`;
   };
 
