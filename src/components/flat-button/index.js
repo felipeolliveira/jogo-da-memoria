@@ -10,12 +10,14 @@ const flatButton = (function() {
       .flat-button-${module._id} {
         width: 50%;
         min-width: 150px;
-        height: 176px;
+        height: 155px;
         background-color: ${active ? "#f25a70" : "#eae6da"};
         color: ${active ? "#ffffff" : "#fffcee"};
         font-size: 24px;
         font-weight: bold;
         text-transform: uppercase;
+        box-sizing: content-box;
+        padding-bottom: 21px
     `;
 
     document.head.insertAdjacentElement("beforeend", $style);
