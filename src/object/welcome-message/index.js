@@ -9,6 +9,7 @@ const welcomeMessage = (function() {
         font-weight: bold;
         font-size: 24px;
         color: #f25a70;
+        letter-spacing: 0.6px;
       }
     `;
 
