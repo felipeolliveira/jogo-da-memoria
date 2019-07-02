@@ -9,7 +9,7 @@ const formfieldWrapper = (function() {
         width: 80%;
         max-width: 800px;
         min-width: 300px;
-        margin: 0 auto;
+        margin: 0 auto 29px;
       }`;
 
     document.head.insertAdjacentElement("beforeend", $style);

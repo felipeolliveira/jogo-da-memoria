@@ -15,11 +15,11 @@ const labelField = (function() {
     document.head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = $content => {
+  module.render = content => {
     module._style();
 
     return `
-      <label class="label-field" for="email">${$content}</label>
+      <label class="label-field">${content}</label>
     `;
   };
 
