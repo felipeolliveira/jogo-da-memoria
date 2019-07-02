@@ -17,7 +17,7 @@
 
   // Creating username input
   const $username = inputField.render("text", "Name Example");
-  const $labelUserName = labelField.render("UserName");
+  const $labelUserName = labelField.render("User Name");
   const $userNameWrapper = formfieldWrapper.render($labelUserName, $username);
 
   // Creating email input
@@ -41,6 +41,9 @@
     $inputConfirmPassword
   );
 
+  // Creating login button
+  const $submitButton = formButton.render("submit", "Submit");
+
   $root.insertAdjacentHTML("beforeend", $loginButton);
   $root.insertAdjacentHTML("beforeend", $signUp);
   $root.insertAdjacentHTML("beforeend", $welcomeWrapper);
@@ -48,4 +51,5 @@
   $root.insertAdjacentHTML("beforeend", $emailWrapper);
   $root.insertAdjacentHTML("beforeend", $passwordWrapper);
   $root.insertAdjacentHTML("beforeend", $confirmPasswordWrapper);
+  $root.insertAdjacentHTML("beforeend", $submitButton);
 })();
