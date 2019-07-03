@@ -9,8 +9,12 @@ const formfieldWrapper = (function() {
         width: 80%;
         max-width: 800px;
         min-width: 300px;
-        margin: 0 auto 29px;
-      }`;
+        margin: 0 auto;
+      }
+      .form-field + .form-field {
+        margin-top:  29px;
+      }
+      `;
 
     document.head.insertAdjacentElement("beforeend", $style);
   };
