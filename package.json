@@ -1,0 +1,22 @@
+{
+  "name": "jogo-da-memoria",
+  "version": "1.0.0",
+  "description": "Desenvolvimento de uma jogo da memória com HTML5, CSS3 e Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipeolliveira/jogo-da-memoria.git"
+  },
+  "author": "Felipe Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/felipeolliveira/jogo-da-memoria/issues"
+  },
+  "homepage": "https://felipeolliveira.github.io/jogo-da-memoria",
+  "dependencies": {
+    "yup": "^0.27.0"
+  }
+}
